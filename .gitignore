@@ -32,3 +32,6 @@ lesson27/target/tomcat/conf/logging.properties
 lesson27/target/tomcat/conf/tomcat-users.xml
 lesson27/target/tomcat/conf/web.xml
 lesson27/target/tomcat/logs/access_log.2022-10-15
+
+*.DS_Store
+*.gitattributes
