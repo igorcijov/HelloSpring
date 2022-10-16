@@ -36,3 +36,4 @@ lesson27/target/tomcat/logs/access_log.2022-10-15
 .DS_Store
 .gitattributes
 **/.idea
+**target
