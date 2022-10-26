@@ -13,5 +13,7 @@
         <property name="current_session_context_class">thread</property>
 
         <mapping class="hibernate.domain.Person"/>
+        <mapping class="hibernate.domain.Product"/>
+        <mapping class="hibernate.domain.Category"/>
     </session-factory>
 </hibernate-configuration>

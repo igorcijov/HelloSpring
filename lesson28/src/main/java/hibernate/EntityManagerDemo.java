@@ -5,6 +5,7 @@ import org.hibernate.cfg.Configuration;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import java.util.List;
 
 public class EntityManagerDemo {
     public static void main(String[] args) {
@@ -15,20 +16,23 @@ public class EntityManagerDemo {
         // Из фабрики создаем EntityManager
         EntityManager em = factory.createEntityManager();
 
-        //add(em, "firstName", "lastName");
-        Person person = em.find(Person.class, 1);
-        System.out.println(person);
+        List<Person> persons = em.createNamedQuery("SELECT p FROM Person p WHERE p.firstName='Ivan'", Person.class).getResultList();
+        System.out.println(persons);
 
-        person.setLastName("Petrov");
-        update(em, person);
-
-        person = em.find(Person.class, 1);
-        System.out.println(person);
-
-        person = em.find(Person.class, 3);
-        System.out.println(person);
-
-        remove(em, person);
+//        add(em, "Sidor", "Sidorov");
+//        Person person = em.find(Person.class, 1);
+//        System.out.println(person);
+//
+//        person.setLastName("Petrov");
+//        update(em, person);
+//
+//        Person person = em.find(Person.class, 1);
+//        System.out.println(person);
+//
+//        person = em.find(Person.class, 3);
+//        System.out.println(person);
+//
+//        remove(em, person);
     }
 
     static void add(EntityManager em, String firstName, String lastName) {
