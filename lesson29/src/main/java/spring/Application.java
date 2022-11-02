@@ -1,3 +1,10 @@
+/*
+ * Java Pro. lesson #29 Spring Data Part.2 JPA.
+ *
+ * @author Igor Cijov
+ * @version 27 Okt 2022
+ */
+
 package spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
