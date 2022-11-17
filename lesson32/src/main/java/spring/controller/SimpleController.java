@@ -31,14 +31,16 @@ public class SimpleController {
         return "list";
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    //@RequestMapping(value = "/add", method = RequestMethod.GET)
+    @GetMapping("/add")
     public String showAddPersonForm(Model model) {
         Person person = new Person();
         model.addAttribute("person", person);
         return "add";
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    //@RequestMapping(value = "/add", method = RequestMethod.POST)
+    @PostMapping("/add")
     public String addPerson(Model model, @ModelAttribute("person") Person person) {
 
         String firstName = person.getFirstName();
@@ -54,7 +56,8 @@ public class SimpleController {
         return "add";
     }
 
-    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    //@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+    @DeleteMapping("/delete")
     public String deletePerson(int id) {
         personService.remove(id);
         return "redirect:/list";
@@ -68,7 +71,8 @@ public class SimpleController {
         return "update";
     }
 
-    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
+    //@RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
+    @PostMapping("/update/{id}")
     public String updatePerson(Model model, @ModelAttribute("person") Person person, @PathVariable Integer id) {
 
         String firstName = person.getFirstName();
