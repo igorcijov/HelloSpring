@@ -29,7 +29,6 @@ public class PersonServiceTest {
         Assertions.assertTrue(count + 1 == persons.size());
         Assertions.assertTrue(persons.get(0).getFirstName().equals("Ivan"));
         Assertions.assertTrue(persons.get(0).getLastName().equals("Ivanov"));
-
     }
 
     @Test
@@ -47,8 +46,6 @@ public class PersonServiceTest {
         service.remove(p.getId());
         persons=service.getAll();
         Assertions.assertTrue(count == persons.size());
-
-
     }
 
     @Test
@@ -63,6 +60,4 @@ public class PersonServiceTest {
         Assertions.assertTrue(persons.get(0).getFirstName().equals("Sidor"));
 
     }
-
-
 }

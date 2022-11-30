@@ -4,11 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /*
- * Java Pro. Homework #33
+ * Java Pro. Homework #34
  *
  * @author Igor Cijov
- * @version 16 Nov 2022
- * Spring Boot + Thymeleaf + JPA + Liquibase + Logger
+ * @version 26 Nov 2022
+ * Spring Boot + Thymeleaf + JPA + Liquibase + Logger + H2 Database Testing
  *
  */
 
