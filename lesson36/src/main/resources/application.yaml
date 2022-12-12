@@ -13,7 +13,7 @@ spring:
     driverClassName: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/telran
     username: postgres
-    password: root
+    password: 1234
 
 logging:
   loggingXml: false
