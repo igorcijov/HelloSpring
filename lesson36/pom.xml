@@ -71,7 +71,7 @@
         <dependency>
             <groupId>org.openapitools</groupId>
             <artifactId>jackson-databind-nullable</artifactId>
-            <version>0.2.1</version>
+            <version>0.2.4</version>
         </dependency>
 
         <dependency>
@@ -90,24 +90,23 @@
             <plugin>
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
-                <version>4.3.1</version>
+                <version>5.0.1</version>
                 <executions>
                     <execution>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>
-                                ${project.basedir}/src/main/resources/openapi/rest-api.yaml
-                            </inputSpec>
                             <generatorName>spring</generatorName>
+                            <inputSpec>${project.basedir}/src/main/resources/openapi/rest-api.yaml</inputSpec>
                             <apiPackage>spring.controller</apiPackage>
-                            <modelPackage>spring.domain</modelPackage>
-                            <supportingFilesToGenerate>
-                                RestApi.java
-                            </supportingFilesToGenerate>
+                            <modelPackage>spring.controller.vo</modelPackage>
+                            <supportingFilesToGenerate>RestApi.java</supportingFilesToGenerate>
+                            <generateSupportingFiles>true</generateSupportingFiles>
+                            <generateApiTests>false</generateApiTests>
                             <configOptions>
                                 <interfaceOnly>true</interfaceOnly>
+                                <useTags>true</useTags>
                                 <java8>false</java8>
                             </configOptions>
                         </configuration>

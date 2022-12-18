@@ -13,26 +13,43 @@ paths:
     post:
       tags:
         - SimpleRest
-      summary: Add one record by id
-      description: Add one record by id
-      operationId: post
-      parameters:
-        - $ref: '#/components/parameters'
+      summary: Add one record
+      description: Add one record
+      operationId: add
+      requestBody:
+        description: Data to add
+        required: true
+        content:
+          'application/json':
+            schema:
+              type: PersonVO
       responses:
         '200':
           description: Successful operation
           content:
             application/json:
               schema:
-                type: Person
+                type: PersonVO
         '404':
           description: Request failed - No items
 
-  
-  #/getAll:
-    #get:
+  /getAll:
+    get:
+      tags:
+        - SimpleRest
+      summary: Get all records
+      description: Get all records
+      operationId: getAll
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: PersonVO
 
-  
   /get/{id}:
     get:
       tags:
@@ -48,28 +65,35 @@ paths:
           content:
             application/json:
               schema:
-                type: Person
+                type: PersonVO
         '404':
           description: Request failed - No items
 
   /update/{id}:
-   put:
-     tags:
-       - SimpleRest
-     summary: Update one record by id
-     description: Update one record by id
-     operationId: put
-     parameters:
-       - $ref: '#/components/parameters/id'
-     responses:
-       '200':
-         description: Successful operation
-         content:
-           application/json:
-             schema:
-               type: Person
-       '404':
-         description: Request failed - No items
+    put:
+      tags:
+        - SimpleRest
+      summary: Update one record
+      description: Update one record
+      operationId: update
+      parameters:
+        - $ref: '#/components/parameters/id'
+      requestBody:
+        description: Data to update
+        required: true
+        content:
+          'application/json':
+            schema:
+              type: PersonVO
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: PersonVO
+        '404':
+          description: Request failed - No items
 
   /delete/{id}:
     delete:
@@ -81,12 +105,8 @@ paths:
       parameters:
         - $ref: '#/components/parameters/id'
       responses:
-        '200':
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                type: Person
+        200:
+          description: Successful deleted
         '404':
           description: Request failed - No items
 
